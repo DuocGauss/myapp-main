@@ -1,0 +1,56 @@
+<!-- sign-up.page.html -->
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark">
+
+     <ion-buttons (click)="cerrarSesion()" expand="full" slot="end">
+      <ion-button class="center-button">
+        Cerrar Sesión
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      <strong>FIRE</strong>
+      <div class="admin">T R A C K</div>
+    </ion-title>
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-text-center">
+    <ion-text color="danger">
+      <ion-icon class="flame-icon" color="danger" name="flame-outline"></ion-icon>
+      <h1>Bienvenido (a)</h1>
+    </ion-text>
+
+    <ion-list>
+      <ion-item *ngFor="let auto of autosBomberos" lines="full">
+        <!-- Muestra la imagen del auto de bombero -->
+        <ion-thumbnail slot="start">
+          <ion-img [src]="auto.imagen"></ion-img>
+        </ion-thumbnail>
+        
+        <!-- Muestra la información del auto de bombero -->
+        <ion-label>
+          <h2>{{ auto.marca }} {{ auto.modelo }} {{ auto.tipo_vehiculo }}</h2>
+          <p>Clave: {{ auto.clave }}</p>
+          <!-- Agrega más campos según sea necesario -->
+          <p>Patente: {{ auto.patente }}</p>
+          <p>Compañia: {{ auto.compania.nombre_compania }}</p>
+          <p>Nro Motor: {{ auto.nro_motor }}</p>
+          <p>Nro Chasís: {{ auto.nro_chasis }}</p>
+        </ion-label>
+        <!-- Botón visible solo para mecánicos -->
+        <!-- Botón visible solo para mecánicos 
+        <ion-button *ngIf="isMechanic" (click)="realizarMantenimiento(auto)">
+          Realizar Mantenimiento
+        </ion-button>-->
+        <ion-button *ngIf="isCaptain" (click)="realizarObservacionDiaria(auto)" color="danger">
+          Realizar Observación Diaria
+        </ion-button>        
+      </ion-item>
+    </ion-list>
+
+    
+  </div>
+</ion-content>

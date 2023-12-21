@@ -1,0 +1,107 @@
+<!-- revision.page.html -->
+<app-header title="FIRE"></app-header>
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">ID del Auto de Bomberos</ion-label>
+    <ion-input
+      type="text"
+      placeholder="ID del Auto de Bomberos"
+      name="clave"
+      [(ngModel)]="revisionData.id_autobombero"
+      required
+      disabled
+    ></ion-input>
+  </ion-item>
+  
+  <ion-content>
+    <ion-item>
+      <ion-label position="stacked">Fecha</ion-label>
+      <ion-input
+        type="date"
+        placeholder="Ingrese la fecha"
+        name="fecha"
+        [(ngModel)]="revisionData.fecha"
+        required
+      ></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">Hora de Salida</ion-label>
+      <ion-input
+        type="text"
+        placeholder="Ingrese la hora de salida"
+        name="horaSalida"
+        [(ngModel)]="revisionData.hora_salida"
+        required
+      ></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">Hora de Llegada</ion-label>
+      <ion-input
+        type="text"
+        placeholder="Ingrese la hora de llegada"
+        name="horaLlegada"
+        [(ngModel)]="revisionData.hora_llegada"
+        required
+      ></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">Km de Entrada</ion-label>
+      <ion-input
+        type="number"
+        placeholder="Ingrese los kilómetros de entrada"
+        name="kmEntrada"
+        [(ngModel)]="revisionData.km_entrada"
+        required
+      ></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">Hora Motor</ion-label>
+      <ion-input
+        type="number"
+        placeholder="Ingrese la hora del motor"
+        name="horaMotor"
+        [(ngModel)]="revisionData.hora_motor"
+        required
+      ></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">Hora Bomba</ion-label>
+      <ion-input
+        type="number"
+        placeholder="Ingrese la hora de la bomba"
+        name="horaBomba"
+        [(ngModel)]="revisionData.hora_bomba"
+        required
+      ></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">Estado del Carro</ion-label>
+      <ion-input
+        type="text"
+        placeholder="Ingrese el estado del carro"
+        name="estCarro"
+        [(ngModel)]="revisionData.est_carro"
+        required
+      ></ion-input>
+    </ion-item>
+  
+    <!-- Agrega los demás campos de acuerdo a la estructura de tu modelo -->
+  
+    <ion-item>
+      <ion-label position="stacked">Observaciones</ion-label>
+      <ion-textarea
+        placeholder="Ingrese observaciones"
+        name="observaciones"
+        [(ngModel)]="revisionData.observaciones"
+      ></ion-textarea>
+    </ion-item>
+  
+    <ion-button expand="full" (click)="guardarObservacionDiaria()">Guardar Observación</ion-button>
+  </ion-content>
+  
